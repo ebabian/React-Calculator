@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  font-family: "calc";
+}
+
+@font-face {
+  font-family: "calc";
+  src: url("calculator.ttf") format("truetype");
+}
+body {
+  background-color: #ebffeb;
+  padding-top: 150px;
+}
+
+.container {
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 375px;
+  min-height: 400px;
+  padding: 30px;
+  background-color: #ccffcc;
+  box-shadow: 5px 5px 15px gray;
+}
+
+/*# sourceMappingURL=main.css.map */
