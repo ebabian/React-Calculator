@@ -12,24 +12,41 @@ class App extends React.Component {
     displayNum = (event) => {
       event.preventDefault();
       if (this.state.operator === '') {
+        let numSelected = this.state.val1 += event.target.value
         this.setState({
-          val1: event.target.value
+          val1: numSelected
         })
         console.log(`Val1: ${this.state.val1}`);
+    } else {
+      let secondNum = this.state.val2 += event.target.value
+      this.setState({
+        val2: secondNum
+      })
+      console.log(`Val2: ${this.state.val2}`);
     }
+  }
+
+  //operator on click
+  operator = (event) => {
+    event.preventDefault();
+    this.setState({
+      operator: event.target.value
+    })
+    console.log(`Operator: ${this.state.operator}`);
   }
 
   //clear the calc screen when 'C' btn is clicked
   clearScreen = (event) => {
     this.setState({
-      val1: ''
+      val1: '',
+      val2: ''
     })
     console.log(`cleared!`);
   }
 
   render = () => {
     return (   <div className="container">
-        <div id="output" className="screen">{this.state.val1}
+        <div id="output" className="screen">{ this.state.operator === '' ? this.state.val1 : this.state.val2}
         </div>
         <button onClick={this.clearScreen} className="clear" id="clear" name="C">C</button>
 
@@ -38,7 +55,7 @@ class App extends React.Component {
             <button onClick={this.displayNum} value="1" className="num">1</button>
             <button onClick={this.displayNum} value="2" className="num">2</button>
             <button onClick={this.displayNum} value="3" className="num">3</button>
-            <button className="operator">+</button>
+            <button onClick={this.operator} value="+" className="operator">+</button>
 
 
             <button onClick={this.displayNum} value="4" className="num">4</button>
