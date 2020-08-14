@@ -8,20 +8,30 @@ class App extends React.Component {
     operator: '',
   }
 
-  displayNum = (event) => {
-    // event.preventDefault();
-    this.setState({
-      val1: event.target.value
-    })
-    console.log(`Val1: ${this.state.val1}`);
+  // display the value of the button on click
+    displayNum = (event) => {
+      event.preventDefault();
+      if (this.state.operator === '') {
+        this.setState({
+          val1: event.target.value
+        })
+        console.log(`Val1: ${this.state.val1}`);
+    }
   }
 
+  //clear the calc screen when 'C' btn is clicked
+  clearScreen = (event) => {
+    this.setState({
+      val1: ''
+    })
+    console.log(`cleared!`);
+  }
 
   render = () => {
     return (   <div className="container">
         <div id="output" className="screen">{this.state.val1}
         </div>
-        <button className="clear" id="clear" name="C">C</button>
+        <button onClick={this.clearScreen} className="clear" id="clear" name="C">C</button>
 
         <div className="calculator">
 
@@ -44,7 +54,7 @@ class App extends React.Component {
 
 
             <button onClick={this.displayNum} value="0" className="num">0</button>
-            <button className="num">.</button>
+            <button onClick={this.displayNum} value="." className="num">.</button>
             <button className="equals">=</button>
             <button className="operator">/</button>
 
