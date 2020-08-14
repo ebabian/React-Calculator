@@ -6,6 +6,7 @@ class App extends React.Component {
     val1: '',
     val2: '',
     operator: '',
+    dot: '.'
   }
 
   // display the value of the button on click
@@ -39,30 +40,30 @@ class App extends React.Component {
   calculate = () => {
     event.preventDefault();
     if(this.state.operator === '+') {
-      let result = parseInt(this.state.val1) + parseInt(this.state.val2)
+      let result = parseFloat(this.state.val1) + parseFloat(this.state.val2)
       this.setState({
         val2: result
       })
       console.log(`Result: ${result}`);
     } else if (this.state.operator === '-') {
-        let result = parseInt(this.state.val1) - parseInt(this.state.val2)
+        let result = parseFloat(this.state.val1) - parseFloat(this.state.val2)
         this.setState({
           val2: result
         })
         console.log(`Result: ${result}`);
     } else if (this.state.operator === 'x') {
-        let result = parseInt(this.state.val1) * parseInt(this.state.val2)
+        let result = parseFloat(this.state.val1) * parseFloat(this.state.val2)
         this.setState({
           val2: result
         })
         console.log(`Result: ${result}`);
-    }  else if (this.state.operator === '/') {
-        let result = parseInt(this.state.val1) / parseInt(this.state.val2)
+    } else if (this.state.operator === '/') {
+        let result = parseFloat(this.state.val1) / parseFloat(this.state.val2)
         this.setState({
           val2: result
         })
         console.log(`Result: ${result}`);
-      }
+    }
   }
 
   //clear the calc screen when 'C' btn is clicked
@@ -105,7 +106,6 @@ class App extends React.Component {
             <button onClick={this.displayNum} value="." className="num">.</button>
             <button onClick={this.calculate} value="=" className="equals">=</button>
             <button onClick={this.operator} value="/" className="operator">/</button>
-
       </div>
     </div>
     )
