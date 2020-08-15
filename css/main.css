@@ -1,12 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: "calc";
 }
 
-@font-face {
-  font-family: "calc";
-  src: url("Calculator.ttf") format("truetype");
-}
 body {
   background-color: #ebffeb;
   padding-top: 150px;

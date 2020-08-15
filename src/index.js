@@ -3,6 +3,7 @@
 // for css use sass --watch css/main.scss css/main.css in terminal
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../css/main.css'
 
 class App extends React.Component {
   state = {

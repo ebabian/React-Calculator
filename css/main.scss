@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: 'calc';
 }
 
 $sg-blue       : #99D6FF;
@@ -8,11 +7,6 @@ $sg-green      : #ebffeb;
 $sg-dark-green : #ccffcc;
 $sg-lime       : #acf76b;
 
-
-@font-face {
-  font-family: 'calc';
-  src: url('Calculator.ttf') format('truetype');
-}
 
 body {
   background-color: $sg-green;
