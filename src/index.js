@@ -1,6 +1,9 @@
 // run python -m SimpleHTTPServer in terminal
 // go to localhost:8000 -> it won't work with index in the browser
 // for css use sass --watch css/main.scss css/main.css in terminal
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class App extends React.Component {
   state = {
     val1: '',
