@@ -89,3 +89,55 @@ body {
 
 
   }
+
+  @media screen and (min-device-width: 300px) and (max-device-width: 700px) {
+    .container {
+      width: 450px;
+      min-height: 520px;
+
+
+      .screen {
+        width: 280px;
+        height: 70px;
+        padding-left: 5px;
+        font-size: 40px;
+        text-align: right;
+        border: 1.5px solid white;
+        border-radius: 2px;
+        padding-right: 20px;
+        padding-top: 10px;
+        margin-left: 105px;
+        margin-bottom: 15px;
+        background-color: white;
+      }
+
+      #clear {
+          float: left;
+          height: 75px;
+          padding-left: 34px;
+          padding-right: 34px;
+          margin-top: -89px;
+          margin-right: 12px;
+          font-size: 32px;
+        }
+
+        #clear:hover{
+          background-color: $sg-green;
+          // border: 1px solid white;
+          // color: white;
+          cursor: pointer;
+        }
+      }
+
+      .calculator {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+
+        button {
+          height: 85px;
+          font-size: 32px;
+        }
+      }
+  }
