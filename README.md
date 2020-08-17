@@ -2,7 +2,7 @@
 ### By Elektra Babian
 ### Live Link: https://elektra-react-calculator.netlify.app/
 
-![calculator img](https://i.imgur.com/XPWEyMb.png)
+![calculator img](https://i.imgur.com/1meIukL.png)
 
 ### Description
 This is the second calculator I've built. The first calculator I programmed with
