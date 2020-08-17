@@ -9,8 +9,7 @@ class App extends React.Component {
   state = {
     val1: '',
     val2: '',
-    operator: '',
-    dot: '.'
+    operator: ''
   }
 
   // display the value of the button on click
@@ -41,7 +40,7 @@ class App extends React.Component {
   }
 
   // calculations
-  calculate = () => {
+  calculate = (event) => {
     event.preventDefault();
     if(this.state.operator === '+') {
       let result = parseFloat(this.state.val1) + parseFloat(this.state.val2)
@@ -69,6 +68,7 @@ class App extends React.Component {
         console.log(`Result: ${result}`);
     }
   }
+
 
   //clear the calc screen when 'C' btn is clicked
   clearScreen = (event) => {
