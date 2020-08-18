@@ -31,39 +31,47 @@ class App extends React.Component {
   }
 
   //operator on click
-  operator = (event) => {
-    event.preventDefault();
+  // operator = (event) => {
+  //   event.preventDefault();
+  //   this.setState({
+  //     operator: event.target.value
+  //   })
+  //   console.log(`Operator: ${this.state.operator}`);
+  // }
+
+  // calculations
+  calculate = (event) => {
     this.setState({
       operator: event.target.value
     })
     console.log(`Operator: ${this.state.operator}`);
-  }
-
-  // calculations
-  calculate = (event) => {
     event.preventDefault();
     if(this.state.operator === '+') {
       let result = parseFloat(this.state.val1) + parseFloat(this.state.val2)
       this.setState({
-        val2: result
+        val1: result,
+        val2: ''
       })
       console.log(`Result: ${result}`);
     } else if (this.state.operator === '-') {
         let result = parseFloat(this.state.val1) - parseFloat(this.state.val2)
         this.setState({
-          val2: result
+          val1: result,
+          val2: ''
         })
         console.log(`Result: ${result}`);
     } else if (this.state.operator === 'x') {
         let result = parseFloat(this.state.val1) * parseFloat(this.state.val2)
         this.setState({
-          val2: result
+          val1: result,
+          val2: ''
         })
         console.log(`Result: ${result}`);
     } else if (this.state.operator === '/') {
         let result = parseFloat(this.state.val1) / parseFloat(this.state.val2)
         this.setState({
-          val2: result
+          val1: result,
+          val2: ''
         })
         console.log(`Result: ${result}`);
     }
@@ -82,7 +90,7 @@ class App extends React.Component {
 
   render = () => {
     return (   <div className="container">
-        <div id="output" className="screen">{ this.state.operator === '' ? this.state.val1 : this.state.val2 }
+        <div id="output" className="screen">{this.state.val2 === '' ? this.state.val1 : this.state.val2}
         </div>
         <button onClick={this.clearScreen} className="clear" id="clear" name="C">C</button>
 
@@ -91,25 +99,25 @@ class App extends React.Component {
             <button onClick={this.displayNum} value="1" className="num">1</button>
             <button onClick={this.displayNum} value="2" className="num">2</button>
             <button onClick={this.displayNum} value="3" className="num">3</button>
-            <button onClick={this.operator} value="+" className="operator">+</button>
+            <button onClick={this.calculate} value="+" className="operator">+</button>
 
 
             <button onClick={this.displayNum} value="4" className="num">4</button>
             <button onClick={this.displayNum} value="5" className="num">5</button>
             <button onClick={this.displayNum} value="6" className="num">6</button>
-            <button onClick={this.operator} value="-" className="operator">-</button>
+            <button onClick={this.calculate} value="-" className="operator">-</button>
 
 
             <button onClick={this.displayNum} value="7" className="num">7</button>
             <button onClick={this.displayNum} value="8" className="num">8</button>
             <button onClick={this.displayNum} value="9" className="num">9</button>
-            <button onClick={this.operator} value="x" className="operator">x</button>
+            <button onClick={this.calculate} value="x" className="operator">x</button>
 
 
             <button onClick={this.displayNum} value="0" className="num">0</button>
             <button onClick={this.displayNum} value="." className="num">.</button>
             <button onClick={this.calculate} value="=" className="equals">=</button>
-            <button onClick={this.operator} value="/" className="operator">/</button>
+            <button onClick={this.calculate} value="/" className="operator">/</button>
       </div>
     </div>
     )
